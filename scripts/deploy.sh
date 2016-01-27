@@ -10,15 +10,14 @@ install_bahmni_installer(){
 copy_artifacts(){
 	echo "Copying the files from bahmni-tw-playbooks/inventory/$1/ to /etc/bahmni-installer/"
 	cp -f bahmni-tw-playbooks/inventory/$1/* /etc/bahmni-installer/
-	unzip $2 -d /etc/bahmni-installer/deployment-artifacts
+	unzip $2_config.zip -d /etc/bahmni-installer/deployment-artifacts/$2_config/
 }
 
 deploy(){
-	cd /etc/bahmni-installer
-	bahmni install inventory
+	cd /etc/bahmni-installer && bahmni install inventory
 }
 
 install_bahmni_installer
-copy_artifacts
+copy_artifacts $1 $2
 deploy
 
