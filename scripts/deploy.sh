@@ -4,7 +4,7 @@ install_bahmni_installer(){
 	rm -rf /etc/bahmni-installer
 	yum remove -y bahmni-installer
 	yum localinstall -y rpms/bahmni-installer-*.rpm
-	mkdir -p /etc/bahmni-installer/deployment-artifacts	
+	mkdir -p /etc/bahmni-installer/deployment-artifacts
 }
 
 copy_artifacts(){
@@ -14,7 +14,7 @@ copy_artifacts(){
 }
 
 copy_db_dump(){
-	wget $1 -O /etc/bahmni-installer/deployment-artifacts/mysql_dump.sql
+	wget --no-check-certificate $1 -O /etc/bahmni-installer/deployment-artifacts/mysql_dump.sql
 }
 
 deploy(){
@@ -28,4 +28,3 @@ then
 	copy_db_dump $4
 fi
 deploy
-
