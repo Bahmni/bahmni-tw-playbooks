@@ -13,11 +13,19 @@ copy_artifacts(){
 	unzip $2_config.zip -d /etc/bahmni-installer/deployment-artifacts/$2_config/
 }
 
+copy_db_dump(){
+	wget $1 -O /etc/bahmni-installer/deployment-artifacts/mysql_dump.sql
+}
+
 deploy(){
 	cd /etc/bahmni-installer && bahmni install inventory
 }
 
 install_bahmni_installer
 copy_artifacts $1 $2
+if [[ "$3" = "true" ]];
+then
+	copy_db_dump $4
+fi
 deploy
 
