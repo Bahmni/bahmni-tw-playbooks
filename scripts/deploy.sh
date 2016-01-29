@@ -15,7 +15,7 @@ copy_artifacts(){
 
 copy_db_dump(){
 	echo "Dropping the openmrs database"
-	ansible bahmni-emr-db -i inventory -m shell -a "mysql -uroot -ppassword openmrs -e 'drop database openmrs'"
+	ansible bahmni-emr-db -i /etc/bahmni-installer/inventory -m shell -a "mysql -uroot -ppassword openmrs -e 'drop database openmrs'"
 	wget --no-check-certificate $1 -O /etc/bahmni-installer/deployment-artifacts/mysql_dump.sql
 }
 
