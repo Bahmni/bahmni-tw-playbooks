@@ -1,12 +1,12 @@
-dot37 ansible_ssh_host=172.18.2.37 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
+172.18.2.37 ansible_ssh_host=172.18.2.37 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
 
 [bahmni-emr-db-slave]
 
 [bahmni-emr-db]
-dot37
+172.18.2.37
 
 [bahmni-emr]
-dot37
+172.18.2.37
 
 [bahmni-erp-db]
 
@@ -23,7 +23,7 @@ dot37
 [bahmni-lab]
 
 [bahmni-reports]
-dot37
+172.18.2.37
 
 [bahmni-pacs]
 
