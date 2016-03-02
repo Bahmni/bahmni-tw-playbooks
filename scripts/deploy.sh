@@ -8,8 +8,9 @@ install_bahmni_installer(){
 }
 
 copy_artifacts(){
-	echo "Copying the files from bahmni-tw-playbooks/inventory/$1/ to /etc/bahmni-installer/"
-	cp -f bahmni-tw-playbooks/inventory/$1/* /etc/bahmni-installer/
+	echo "Copying bahmni-tw-playbooks/$1 to /etc/bahmni-installer/inventory"
+	cp -f bahmni-tw-playbooks/$1 /etc/bahmni-installer/inventory
+  echo "Copying $2_config"
 	unzip $2_config.zip -d /etc/bahmni-installer/deployment-artifacts/$2_config/
 }
 
