@@ -1,0 +1,8 @@
+- name: Clone lets encrypt from git
+  command: git clone https://github.com/letsencrypt/letsencrypt.git
+  ignore_errors: true
+
+
+- name: Copy certs folder to go-agent
+  sudo: no
+  synchronize: mode=pull src=/etc/letsencrypt/live/mybahmni.org dest=/var/go

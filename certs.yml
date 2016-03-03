@@ -1,0 +1,4 @@
+- hosts: bahmni-certs
+  sudo: yes
+  roles:
+    - { role: bahmni-certs }

@@ -1,0 +1,4 @@
+188.166.216.132 ansible_ssh_host=188.166.216.132 ansible_ssh_user=root
+
+[bahmni-certs]
+188.166.216.132
