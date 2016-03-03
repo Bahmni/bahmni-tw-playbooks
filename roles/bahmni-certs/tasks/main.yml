@@ -2,7 +2,10 @@
   command: git clone https://github.com/letsencrypt/letsencrypt.git
   ignore_errors: true
 
+- name: Generate certs for bahmni domain
+  command: letsencrypt/letsencrypt-auto certonly renew --agree-tos --email 'shruthi.pitta@gmail.com' --standalone  -d mybahmni.org
+
 
 - name: Copy certs folder to go-agent
   sudo: no
-  synchronize: mode=pull src=/etc/letsencrypt/live/mybahmni.org dest=/var/go
+  synchronize: mode=pull src=/etc/letsencrypt/live/mybahmni.org dest=/var/go/
