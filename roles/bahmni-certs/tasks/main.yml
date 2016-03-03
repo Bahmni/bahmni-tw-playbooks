@@ -3,7 +3,7 @@
   ignore_errors: true
 
 - name: Generate certs for bahmni domain
-  command: letsencrypt/letsencrypt-auto certonly renew --agree-tos --email 'shruthi.pitta@gmail.com' --standalone  -d mybahmni.org
+  command: letsencrypt/letsencrypt-auto --renew certonly --agree-tos --email 'bahmni-tw@thoughtworks.com' --standalone  -d mybahmni.org
 
 
 - name: Copy certs folder to go-agent
