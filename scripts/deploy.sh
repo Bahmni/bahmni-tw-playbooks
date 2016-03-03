@@ -10,7 +10,7 @@ install_bahmni_installer(){
 copy_artifacts(){
 	echo "Copying bahmni-tw-playbooks/$1 to /etc/bahmni-installer/inventory"
 	cp -f bahmni-tw-playbooks/$1 /etc/bahmni-installer/inventory
-	cp -f bahmni-tw-playbooks/group_vars/all /opt/bahmni-installer/bahmni-playbooks/group_vars/all
+	cp -f bahmni-tw-playbooks/scripts/setup.yml /etc/bahmni-installer/setup.yml
   echo "Copying $2_config"
 	unzip $2_config.zip -d /etc/bahmni-installer/deployment-artifacts/$2_config/
 }
