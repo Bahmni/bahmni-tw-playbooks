@@ -1,0 +1,67 @@
+- hosts: localhost
+  remote_user: root
+  gather_facts: false
+  tasks:
+  - name: Create new Droplet.
+    digital_ocean:
+      state: present
+      command: droplet
+      name: letsencrypt-server
+      private_networking: yes
+      size_id: 512mb
+      image_id: ubuntu-14-04-x64
+      region_id: sgp1
+      api_token: "{{ api_token }}"
+      ssh_key_ids: 1726340
+      # Required for idempotence/only one droplet creation.
+      unique_name: yes
+    register: do
+
+  - name: Add new host to our inventory.
+    add_host:
+      name: "{{ do.droplet.ip_address }}"
+      groups: do
+    when: do.droplet is defined
+
+  - digital_ocean_domain:
+        state: present
+        name: "{{ domain_name }}"
+        api_token: "{{ api_token }}"
+        ip: "{{ do.droplet.ip_address }}"
+
+- hosts: do
+  remote_user: root
+  gather_facts: false
+
+  tasks:
+    - name: Wait for port 22 to become available.
+      local_action: "wait_for port=22 host={{ inventory_hostname }}"
+
+    - name: Download letsencrypt
+      unarchive: src=https://github.com/letsencrypt/letsencrypt/archive/v0.4.2.tar.gz dest=/root/ copy=no
+
+    - name: Rename the letsencrypt folder
+      file: src=letsencrypt-0.4.2 dest=letsencrypt state=link
+
+    - name: Generate certs for bahmni domain
+      command: letsencrypt/letsencrypt-auto --renew certonly --agree-tos --email 'bharatak@thoughtworks.com' --standalone --staging -d {{ domain_name }}
+
+    - name: Copy certs folder to go-agent
+      sudo: no
+      synchronize: mode=pull src=/etc/letsencrypt/live/{{ domain_name }} dest=/var/go
+
+- hosts: localhost
+  remote_user: root
+  gather_facts: false
+  tasks:
+   - name: Delete domain
+     command: "curl -X DELETE -H 'Content-Type: application/json' -H 'Authorization: Bearer {{ api_token }}' 'https://api.digitalocean.com/v2/domains/{{ domain_name }}'"
+
+   - name: Destroy the droplet.
+     digital_ocean:
+       state: absent
+       command: droplet
+       name: letsencrypt-server
+       id: "{{ do.droplet.id }}"
+       api_token: "{{ api_token }}"
+       ssh_key_ids: 1726340
