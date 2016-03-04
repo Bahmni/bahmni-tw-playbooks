@@ -1,0 +1,28 @@
+# roles/db/main.yml
+---
+- name: Copy my.cnf
+  template: 
+    src=my.cnf
+    dest=~/.my.cnf
+    owner=root
+    group=root
+    mode=0664
+
+
+# file db/tasks/main.yml
+- name: Install MySQL
+  yum: pkg={{item}} state=installed
+  with_items:
+    - mysql-server
+    - mysql
+    - MySQL-python
+
+- name: Start MySQL service
+  service: name=mysqld state=started enabled=yes
+  
+- name: Create application database
+  mysql_db: name={{ dbname }} state=present
+
+- name: Create application database user
+  mysql_user: name={{ dbuser }} password={{ dbpasswd }}
+                priv=*.*:ALL host='localhost' state=present
