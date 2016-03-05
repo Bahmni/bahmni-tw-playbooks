@@ -38,17 +38,17 @@
       local_action: "wait_for port=22 host={{ inventory_hostname }}"
 
     - name: Download letsencrypt
-      unarchive: src=https://github.com/letsencrypt/letsencrypt/archive/v0.4.2.tar.gz dest=/root/ copy=no
+      unarchive: src=https://github.com/letsencrypt/letsencrypt/archive/v{{letsencrypt_version}}.tar.gz dest={{letsencrypt_dest_on_droplet}} copy=no
 
     - name: Rename the letsencrypt folder
-      file: src=letsencrypt-0.4.2 dest=letsencrypt state=link
+      file: src=letsencrypt-{{ letsencrypt_version }} dest=letsencrypt state=link
 
     - name: Generate certs for bahmni domain
-      command: letsencrypt/letsencrypt-auto --renew certonly --agree-tos --email 'bharatak@thoughtworks.com' --standalone --staging -d {{ domain_name }}
+      command: letsencrypt/letsencrypt-auto --renew certonly --agree-tos --email '{{ letsencrypt_notification_email }}' --standalone --staging -d {{ domain_name }}
 
     - name: Copy certs folder to go-agent
       sudo: no
-      synchronize: mode=pull src=/etc/letsencrypt/live/{{ domain_name }} dest=/var/go
+      synchronize: mode=pull src=/etc/letsencrypt/live/{{ domain_name }} dest= {{certs_destination}}
 
 - hosts: localhost
   remote_user: root
