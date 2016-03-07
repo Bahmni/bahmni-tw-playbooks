@@ -1,0 +1,28 @@
+- hosts: all
+  sudo: yes
+  roles:
+   - { role: digitalocean}
+  vars:
+   do_setup: True
+  vars_files:
+   - vars/letsencrypt.yml
+  tags:
+   - setup
+
+- hosts: do
+  sudo: yes
+  roles:
+   - { role: letsencrypt}
+  vars_files:
+   - vars/letsencrypt.yml
+
+- hosts: all
+  sudo: yes
+  roles:
+   - { role: digitalocean}
+  vars:
+   do_teardown: True
+  vars_files:
+   - vars/letsencrypt.yml
+  tags:
+   - teardown

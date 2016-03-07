@@ -1,0 +1,11 @@
+- name: Delete the domain association
+  command: "curl -X DELETE -H 'Content-Type: application/json' -H 'Authorization: Bearer {{ api_token }}' 'https://api.digitalocean.com/v2/domains/{{ domain_name }}'"
+
+- name: Destroy the droplet.
+  digital_ocean:
+   state: absent
+   command: droplet
+   name: letsencrypt-server
+   id: "{{ do.droplet.id }}"
+   api_token: "{{ api_token }}"
+   ssh_key_ids: "{{ do_ssh_key_ids}}"

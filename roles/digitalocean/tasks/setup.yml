@@ -1,0 +1,26 @@
+  - name: Create new Droplet.
+    digital_ocean:
+      state: "{{ do_droplet_state}}"
+      command: droplet
+      name: letsencrypt-server
+      private_networking: yes
+      size_id: 512mb
+      image_id: ubuntu-14-04-x64
+      region_id: sgp1
+      api_token: "{{ api_token }}"
+      ssh_key_ids: "{{ do_ssh_key_ids}}"
+      unique_name: yes
+    register: do
+
+  - name: Add new host to our inventory.
+    add_host:
+      name: "{{ do.droplet.ip_address }}"
+      groups: do
+    when: do.droplet is defined
+
+  - name: Associate the ip address to the domain
+    digital_ocean_domain:
+        state: "{{ do_domain_state}}"
+        name: "{{ domain_name }}"
+        api_token: "{{ api_token }}"
+        ip: "{{ do.droplet.ip_address }}"

@@ -1,0 +1,4 @@
+letsencrypt_version: "0.4.2"
+certs_destination: "/var/go"
+letsencrypt_dest_on_droplet: "/root"
+letsencrypt_notification_email: "bharatak@thoughtworks.com"
