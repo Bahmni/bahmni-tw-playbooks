@@ -16,7 +16,7 @@
   vars_files:
    - vars/letsencrypt.yml
 
-- hosts: all
+- hosts: localhost
   sudo: yes
   roles:
    - { role: digitalocean}
