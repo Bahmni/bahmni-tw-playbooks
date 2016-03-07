@@ -1,4 +1,4 @@
 do_droplet_state: "present"
 api_token: "{{ lookup('env','DIGITAL_OCEAN_API_KEY') }}"
-do_ssh_key_ids: 1733087
+do_ssh_key_ids: "{{ lookup('env','DIGITAL_OCEAN_SSH_KEY_ID') }}"
 do_domain_state: "present"
