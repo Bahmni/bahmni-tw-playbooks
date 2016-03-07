@@ -11,6 +11,7 @@
 
 - hosts: do
   sudo: yes
+  remote_user: root
   roles:
    - { role: letsencrypt}
   vars_files:
