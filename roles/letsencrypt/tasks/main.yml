@@ -12,4 +12,4 @@
 
 - name: Copy certs folder to go-agent
   sudo: no
-  synchronize: mode=pull src=/etc/letsencrypt/live/{{ domain_name }} dest= {{certs_destination}}
+  synchronize: mode=pull src= /etc/letsencrypt/archive/{{ domain_name }} dest= {{ certs_destination }}
