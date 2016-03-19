@@ -22,7 +22,7 @@ copy_db_dump(){
 }
 
 deploy(){
-	cd /etc/bahmni-installer && bahmni -i inventory install
+	cd /etc/bahmni-installer && bahmni install inventory
 }
 
 install_bahmni_installer
