@@ -10,7 +10,7 @@
 
 - name: Find the path of bahmni-installer
   find:
-    paths: /rpms
+    paths: "{{ base_path }}/rpms"
     patterns: bahmni-installer-*.noarch.rpm
   register: bahmni_installer_path
   failed_when: bahmni_installer_path.matched != 1
@@ -41,10 +41,10 @@
   command: mv -f /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}-config-master /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}_config
 
 - name: Copy bahmni-tw-playbooks to inventory file
-  command: cp {{ environment_name }} /etc/bahmni-installer/inventory
+  command: cp {{ base_path }}/bahmni-tw-playbooks/{{ environment_name }} /etc/bahmni-installer/inventory
 
 - name: Copy setup.xml
   template: src=setup.yml.j2 dest=/etc/bahmni-installer/setup.yml
 
-#- name: Run bahmni installer
-#  shell: "bahmni -i inventory install"
+- name: Run bahmni installer
+  shell: "bahmni -i inventory install"
