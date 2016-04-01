@@ -1,0 +1,4 @@
+- hosts: deploy_scripts
+  sudo: yes
+  roles:
+    - { role: deploy_scripts }

@@ -1,0 +1,7 @@
+localhost ansible_connection=local
+
+[deploy_scripts]
+localhost
+
+[local:children]
+deploy_scripts

@@ -1,0 +1,50 @@
+# Run from agent
+- name: Deleting temporal files
+  file:
+    path=/etc/bahmni-installer
+    state=absent
+  ignore_errors: true
+
+- name: Remove bahmni-installer
+  yum: name=bahmni-installer state=absent
+
+- name: Find the path of bahmni-installer
+  find:
+    paths: /rpms
+    patterns: bahmni-installer-*.noarch.rpm
+  register: bahmni_installer_path
+  failed_when: bahmni_installer_path.matched != 1
+
+- name: Install yum
+  yum: name={{ bahmni_installer_path.files[0].path }} state=present
+
+- name: Deleting master.zip file
+  file:
+    path=/etc/bahmni-installer/deployment-artifacts/master.zip
+    state=absent
+  ignore_errors: true
+
+- name: Download {{ implementation_name }} config zip from git
+  get_url:
+    url=https://github.com/Bahmni/{{ implementation_name }}-config/archive/master.zip
+    force=yes
+    dest=/etc/bahmni-installer/deployment-artifacts/master.zip
+
+- name: Unzip downloaded config file
+  unarchive:
+    src=/etc/bahmni-installer/deployment-artifacts/master.zip
+    dest=/etc/bahmni-installer/deployment-artifacts
+    creates=yes
+    mode=0744
+
+- name: Renaming config file
+  command: mv -f /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}-config-master /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}_config
+
+- name: Copy bahmni-tw-playbooks to inventory file
+  command: cp {{ environment_name }} /etc/bahmni-installer/inventory
+
+- name: Copy setup.xml
+  template: src=setup.yml.j2 dest=/etc/bahmni-installer/setup.yml
+
+#- name: Run bahmni installer
+#  shell: "bahmni -i inventory install"

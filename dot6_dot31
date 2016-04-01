@@ -1,49 +1,41 @@
-172.18.2.6 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
-172.18.2.31 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
-
-[bahmni-emr]
-172.18.2.6
-172.18.2.31 passive=yes
-
-[bahmni-emr-db]
-172.18.2.6
+10.4.2.62 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
 
 [bahmni-emr-db-slave]
-172.18.2.31
 
-[bahmni-erp]
-172.18.2.6
-172.18.2.31 passive=yes
+[bahmni-emr-db]
+10.4.2.62
+
+[bahmni-emr]
+10.4.2.62
 
 [bahmni-erp-db]
-172.18.2.6
 
 [bahmni-erp-db-slave]
-172.18.2.31
 
-[bahmni-lab]
-172.18.2.6
-172.18.2.31 passive=yes
+[bahmni-erp]
 
 [bahmni-lab-db]
-172.18.2.6
 
 [bahmni-lab-db-slave]
-172.18.2.31
+
+[bahmni-lab]
 
 [bahmni-reports]
-172.18.2.6
-172.18.2.31 passive=yes
+
 
 [pacs-integration]
+10.4.2.62
 
 [pacs-integration-db]
+10.4.2.62
 
 [pacs-integration-db-slave]
 
 [dcm4chee]
+10.4.2.62
 
 [bahmni-event-log-service]
+10.4.2.62
 
 [local:children]
 bahmni-emr

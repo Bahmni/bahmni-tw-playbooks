@@ -25,7 +25,11 @@
 [bahmni-reports]
 172.18.2.30
 
-[bahmni-pacs]
+[pacs-integration]
+
+[pacs-integration-db]
+
+[pacs-integration-db-slave]
 
 [dcm4chee]
 
@@ -42,7 +46,9 @@ bahmni-erp
 bahmni-erp-db
 bahmni-erp-db-slave
 bahmni-reports
-bahmni-pacs
+pacs-integration
+pacs-integration-db
+pacs-integration-db-slave
 dcm4chee
 bahmni-event-log-service
 
