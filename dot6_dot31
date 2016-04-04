@@ -36,12 +36,17 @@
 172.18.2.31 passive=yes
 
 [pacs-integration]
+172.18.2.6
+172.18.2.31 passive=yes
 
 [pacs-integration-db]
+172.18.2.6
 
 [pacs-integration-db-slave]
+172.18.2.31
 
 [dcm4chee]
+172.18.2.6
 
 [bahmni-event-log-service]
 
