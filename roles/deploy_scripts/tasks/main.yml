@@ -48,3 +48,6 @@
 
 - name: Run bahmni installer
   shell: "bahmni -i inventory install"
+  register: deploy_status
+
+- debug: var=deploy_status
