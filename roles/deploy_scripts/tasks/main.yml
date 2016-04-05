@@ -10,7 +10,7 @@
 
 - name: Find the path of bahmni-installer
   find:
-    paths: "{{ base_path }}/rpms"
+    paths: "{{ installer_location }}"
     patterns: bahmni-installer-*.noarch.rpm
   register: bahmni_installer_path
   failed_when: bahmni_installer_path.matched != 1
@@ -18,27 +18,14 @@
 - name: Install yum
   yum: name={{ bahmni_installer_path.files[0].path }} state=present
 
-- name: Deleting master.zip file
-  file:
-    path=/etc/bahmni-installer/deployment-artifacts/master.zip
-    state=absent
-  ignore_errors: true
-
 - name: Download {{ implementation_name }} config zip from git
   get_url:
-    url=https://github.com/Bahmni/{{ implementation_name }}-config/archive/master.zip
+    url={{ config_url }}
     force=yes
-    dest=/etc/bahmni-installer/deployment-artifacts/master.zip
+    dest=/etc/bahmni-installer/deployment-artifacts/impl.zip
 
 - name: Unzip downloaded config file
-  unarchive:
-    src=/etc/bahmni-installer/deployment-artifacts/master.zip
-    dest=/etc/bahmni-installer/deployment-artifacts
-    creates=yes
-    mode=0744
-
-- name: Renaming config file
-  command: mv -f /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}-config-master /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}_config
+  command: unzip /etc/bahmni-installer/deployment-artifacts/impl.zip -d /etc/bahmni-installer/deployment-artifacts/{{implementation_name}}_config
 
 - name: Copy bahmni-tw-playbooks to inventory file
   command: cp {{ base_path }}/bahmni-tw-playbooks/{{ environment_name }} /etc/bahmni-installer/inventory
@@ -48,6 +35,3 @@
 
 - name: Run bahmni installer
   shell: "bahmni -i inventory install"
-  register: deploy_status
-
-- debug: var=deploy_status
