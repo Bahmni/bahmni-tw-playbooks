@@ -21,8 +21,18 @@
   service: name=mysqld state=started enabled=yes
   
 - name: Create application database
-  mysql_db: name={{ dbname }} state=present
+  mysql_db:
+    name={{ dbname }}
+    login_user={{ nagios_bahmni_db_user }}
+    login_password={{ nagios_bahmni_db_password }}
+    state=present
 
 - name: Create application database user
-  mysql_user: name={{ dbuser }} password={{ dbpasswd }}
-                priv=*.*:ALL host='localhost' state=present
+  mysql_user:
+    name={{ dbuser }}
+    password={{ dbpasswd }}
+    login_user={{ nagios_bahmni_db_user }}
+    login_password={{ nagios_bahmni_db_password }}
+    priv=*.*:ALL
+    host='127.0.0.1'
+    state=present

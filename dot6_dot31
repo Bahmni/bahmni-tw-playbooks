@@ -1,6 +1,8 @@
 172.18.2.6 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
 172.18.2.31 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
 
+[nagios-server]
+
 [bahmni-emr]
 172.18.2.6
 172.18.2.31 passive=yes

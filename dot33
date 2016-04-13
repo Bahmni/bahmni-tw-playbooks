@@ -1,26 +1,26 @@
 172.18.2.33 ansible_ssh_host=172.18.2.33 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
 
-[bahmni-emr-db-slave]
-
-[bahmni-emr-db]
-172.18.2.33
+[nagios-server]
 
 [bahmni-emr]
 172.18.2.33
 
-[bahmni-erp-db]
+[bahmni-emr-db]
+172.18.2.33
 
+[bahmni-emr-db-slave]
 
-[bahmni-erp-db-slave]
-
-[bahmni-erp]
-
+[bahmni-lab]
 
 [bahmni-lab-db]
 
 [bahmni-lab-db-slave]
 
-[bahmni-lab]
+[bahmni-erp]
+
+[bahmni-erp-db]
+
+[bahmni-erp-db-slave]
 
 [bahmni-reports]
 172.18.2.33

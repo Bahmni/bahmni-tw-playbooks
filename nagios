@@ -1,5 +1,34 @@
-192.168.33.11 ansible_ssh_user=vagrant  ansible_ssh_port=22 ansible_ssh_pass=vagrant
+10.4.3.34 ansible_ssh_user=vagrant  ansible_ssh_port=22 ansible_ssh_pass=vagrant
+10.4.2.68 ansible_ssh_user=vagrant  ansible_ssh_port=22 ansible_ssh_pass=vagrant
 
 [nagios-server]
-192.168.33.11
+10.4.3.34
 
+[bahmni-emr]
+10.4.2.68
+
+[bahmni-emr-db]
+10.4.2.68
+
+[bahmni-emr-db-slave]
+
+[bahmni-lab]
+
+[bahmni-lab-db]
+
+[bahmni-lab-db-slave]
+
+[bahmni-erp]
+
+[bahmni-erp-db]
+
+[bahmni-erp-db-slave]
+
+[bahmni-reports]
+
+[bahmni-pacs]
+
+[dcm4chee]
+10.4.2.68
+
+[bahmni-event-log-service]
