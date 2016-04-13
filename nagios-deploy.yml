@@ -1,0 +1,4 @@
+- hosts: go-agent
+  sudo: yes
+  roles:
+    - { role: install-nagios }
