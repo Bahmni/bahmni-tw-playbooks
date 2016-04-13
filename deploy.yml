@@ -1,4 +1,11 @@
-- hosts: deploy_scripts
+- hosts: go-agent
   sudo: yes
   roles:
-    - { role: deploy_scripts }
+    - { role: bahmni-pre-deploy }
+  tags: setup
+
+- hosts: go-agent
+  tasks:
+    - name: Run bahmni installer
+      shell: "bahmni -i inventory install"
+  tags: install
