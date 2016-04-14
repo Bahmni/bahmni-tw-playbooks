@@ -23,6 +23,7 @@
     url={{ config_url }}
     force=yes
     dest=/etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}_{{ branch }}.zip
+    mode=0644
 
 - name: Unzip downloaded config file
   unarchive:
