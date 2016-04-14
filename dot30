@@ -36,6 +36,7 @@
 [bahmni-event-log-service]
 
 [local:children]
+nagios-server
 bahmni-emr
 bahmni-emr-db
 bahmni-emr-db-slave
