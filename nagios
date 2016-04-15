@@ -1,34 +1,62 @@
-10.4.3.34 ansible_ssh_user=vagrant  ansible_ssh_port=22 ansible_ssh_pass=vagrant
-10.4.2.68 ansible_ssh_user=vagrant  ansible_ssh_port=22 ansible_ssh_pass=vagrant
+172.18.2.27 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
+172.18.2.31 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
 
 [nagios-server]
-10.4.3.34
+172.18.2.31
 
 [bahmni-emr]
-10.4.2.68
+172.18.2.27
 
 [bahmni-emr-db]
-10.4.2.68
+172.18.2.27
 
 [bahmni-emr-db-slave]
 
-[bahmni-lab]
-
-[bahmni-lab-db]
-
-[bahmni-lab-db-slave]
-
 [bahmni-erp]
+172.18.2.27
 
 [bahmni-erp-db]
+172.18.2.27
 
 [bahmni-erp-db-slave]
 
-[bahmni-reports]
+[bahmni-lab]
+172.18.2.27
 
-[bahmni-pacs]
+[bahmni-lab-db]
+172.18.2.27
+
+[bahmni-lab-db-slave]
+
+[bahmni-reports]
+172.18.2.27
+
+[pacs-integration]
+
+
+[pacs-integration-db]
+
+
+[pacs-integration-db-slave]
 
 [dcm4chee]
-10.4.2.68
 
 [bahmni-event-log-service]
+
+[local:children]
+nagios-server
+bahmni-emr
+bahmni-emr-db
+bahmni-emr-db-slave
+bahmni-lab
+bahmni-lab-db
+bahmni-lab-db-slave
+bahmni-erp
+bahmni-erp-db
+bahmni-erp-db-slave
+bahmni-reports
+pacs-integration
+pacs-integration-db
+pacs-integration-db-slave
+dcm4chee
+bahmni-event-log-service
