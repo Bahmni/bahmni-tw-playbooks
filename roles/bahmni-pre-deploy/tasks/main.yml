@@ -15,7 +15,7 @@
   register: bahmni_installer_path
   failed_when: bahmni_installer_path.matched != 1
 
-- name: Install yum
+- name: Install bahmni-installer rpm
   yum: name={{ bahmni_installer_path.files[0].path }} state=present
 
 - name: Download {{ implementation_name }} config zip from git
