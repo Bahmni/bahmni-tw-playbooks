@@ -33,6 +33,8 @@
 
 [dcm4chee]
 
+[dcm4chee-db-slave]
+
 [bahmni-event-log-service]
 
 [local:children]
@@ -51,6 +53,7 @@ pacs-integration
 pacs-integration-db
 pacs-integration-db-slave
 dcm4chee
+dcm4chee-db-slave
 bahmni-event-log-service
 
 [local:vars]
