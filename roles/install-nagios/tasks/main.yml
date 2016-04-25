@@ -21,5 +21,8 @@
 - name: Copy bahmni-tw-playbooks to inventory file
   command: cp {{ base_path }}/bahmni-tw-playbooks/{{ environment_name }} /etc/bahmni-installer/inventory
 
-- name: Run install nagios.
+- name: Copy setup.xml
+  template: src=setup.yml.j2 dest=/etc/bahmni-installer/setup.yml
+
+- name: Run install nagios
   command: "bahmni -i inventory install-nagios"
