@@ -1,4 +1,4 @@
-- name: add go-agent yum repo
+- name: Add go-agent yum repo
   template:
     src=go-agent.repo.j2
     dest=/etc/yum.repos.d/go-agent.repo
@@ -11,3 +11,9 @@
     src=go-agent.j2
     dest=/etc/default/go-agent
   notify: Start go-agent
+
+- name: Set GPG key for RVM
+  command: "gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3"
+
+- name: Download RVM with Ruby 1.9.3
+  shell: "curl -sSL https://get.rvm.io | bash -s stable --ruby=1.9.3"
