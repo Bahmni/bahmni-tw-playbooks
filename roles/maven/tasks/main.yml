@@ -1,0 +1,21 @@
+- name: Download Maven
+  get_url: url={{ maven_download_location }} dest=/opt/{{ maven_file }}
+
+- name: Remove old maven dir if present
+  file: path=/usr/local/maven state=absent
+  register: mvn_path
+
+- name: Create mvn directory
+  file: path=/usr/local/maven state=directory
+
+- name: Extract maven
+  become: true
+  command: "tar -xvzf /opt/{{ maven_file }} -C /usr/local/maven --strip 1"
+
+- name: Set maven variables
+  template:
+    src=maven.sh.j2
+    dest=/etc/profile.d/maven.sh
+
+- name: Source maven vars
+  shell: "source /etc/profile.d/maven.sh"

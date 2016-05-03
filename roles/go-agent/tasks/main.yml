@@ -1,0 +1,13 @@
+- name: add go-agent yum repo
+  template:
+    src=go-agent.repo.j2
+    dest=/etc/yum.repos.d/go-agent.repo
+
+- name: Install go-agent from GoCD repo
+  yum: name="go-agent" state=present
+
+- name: Set GO_SERVER to 172.18.2.11
+  template:
+    src=go-agent.j2
+    dest=/etc/default/go-agent
+  notify: Start go-agent

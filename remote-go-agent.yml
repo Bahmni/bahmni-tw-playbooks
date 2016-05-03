@@ -1,0 +1,6 @@
+- hosts: remote-go-agent
+  become: true
+  roles:
+    - { role: go-agent }
+    - { role: maven }
+  tags: setup
