@@ -1,2 +1,7 @@
+---
+
 dependencies:
   - { role: oracle-java }
+  - { role: ruby1.9.3 }
+  - { role: maven }
+  - { role: firefox38 }

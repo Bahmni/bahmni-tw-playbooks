@@ -1,0 +1,29 @@
+- name: Install EPEL repo.
+  yum:
+    name: "epel-release"
+    state: present
+
+- name: Import EPEL GPG key.
+  rpm_key:
+    key: "{{ epel_repo_gpg_key_url }}"
+    state: present
+
+- name: Install Xvfb
+  yum: name=xorg-x11-server-Xvfb state=present
+
+- name: Add Xvfb service
+  become: true
+  template:
+    src=xvfb.j2
+    dest=/etc/init.d/xvfb
+    mode="u=rwx,g=rx,o=rx"
+
+- name: Add Xvfb to startup
+  command: "chkconfig xvfb on"
+
+- name: Start Xvfb
+  become: true
+  command: "service xvfb start"
+
+#- name: Install Firefox
+#  yum: name=firefox-38.7.0-1.el6.centos state=installed
