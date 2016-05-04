@@ -25,5 +25,5 @@
   become: true
   command: "service xvfb start"
 
-#- name: Install Firefox
-#  yum: name=firefox-38.7.0-1.el6.centos state=installed
+- name: Install Firefox
+  yum: name=firefox-38.7.0-1.el6.centos state=installed
