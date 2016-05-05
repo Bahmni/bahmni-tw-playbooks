@@ -1,0 +1,13 @@
+- name: Add mysql yum repo
+  template:
+    src=mysql.repo.j2
+    dest=/etc/yum.repos.d/mysql56.repo
+
+- name: Install mysql from yum repo
+  yum: name=mysql-community-server
+
+- name: Start mysql service
+  service: name=mysqld state=started
+
+- name: Run inital db setup for mysql
+  command: mysqladmin -u root password password

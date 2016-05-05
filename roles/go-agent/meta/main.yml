@@ -6,3 +6,4 @@ dependencies:
   - { role: maven }
   - { role: firefox38 }
   - { role: nodejs }
+  - { role: mysql5.6 }
