@@ -1,0 +1,21 @@
+- name: Fetch nodejs 6.x repo data
+  become: true
+  shell: "curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -"
+
+- name: Install nodejs
+  yum: name=nodejs state=present
+
+- name: Install native build tools for nodejs addons
+  yum: state=present name={{ item }}
+  with_items:
+    - gcc
+    - gcc-c++
+    - make
+
+- name: Install grunt-cli NPM module
+  become: true
+  npm: name=grunt-cli state=present global=yes
+
+- name: Install bower NPM module
+  become: true
+  npm: name=bower state=present global=yes
