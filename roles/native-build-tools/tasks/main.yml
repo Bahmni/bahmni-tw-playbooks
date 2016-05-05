@@ -1,0 +1,6 @@
+- name: Install native build tools
+  yum: state=present name={{ item }}
+  with_items:
+    - gcc
+    - gcc-c++
+    - make
