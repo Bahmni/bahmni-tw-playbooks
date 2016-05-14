@@ -58,3 +58,4 @@ bahmni-event-log-service
 
 [local:vars]
 implementation_name=endtb
+selinux_state=permissive
