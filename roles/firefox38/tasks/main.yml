@@ -26,4 +26,4 @@
   command: "service xvfb start"
 
 - name: Install Firefox
-  yum: name=firefox-38.7.0-1.el6.centos state=installed
+  yum: name=ftp://rpmfind.net/linux/centos/6.7/updates/x86_64/Packages/firefox-38.7.0-1.el6.centos.x86_64.rpm state=installed
