@@ -1,3 +1,0 @@
-root:{{ admin_email }}:{{ ssmtp_mailhub }}
-nagios:{{ admin_email }}:{{ ssmtp_mailhub }}
-{{ ansible_ssh_user }}:{{ admin_email }}:{{ ssmtp_mailhub }}
