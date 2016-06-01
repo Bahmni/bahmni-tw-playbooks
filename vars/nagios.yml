@@ -67,6 +67,7 @@ nagios_all_roles: &nagios_all_roles
   - bahmni-reports
   - bahmni-pacs
   - dcm4chee
+  - dcm4chee-db
   - bahmni-event-log-service
 
 nagios_services:
