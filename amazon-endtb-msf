@@ -1,4 +1,4 @@
-endtb-msf.mybahmni.org ansible_ssh_host=endtb-msf.mybahmni.org ansible_ssh_user=centos ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
+endtb-msf.mybahmni.org ansible_ssh_host=endtb-msf.mybahmni.org ansible_ssh_user=centos ansible_ssh_private_key_file=/var/go/.ssh/bahmni.pem
 
 [nagios-server]
 
