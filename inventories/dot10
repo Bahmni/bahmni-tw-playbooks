@@ -1,55 +1,43 @@
-172.18.2.6 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
-172.18.2.31 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
+172.18.2.10 ansible_ssh_user=bahmni_support ansible_ssh_private_key_file=/var/go/.ssh/id_rsa
 
 [nagios-server]
 
-
 [bahmni-emr]
-172.18.2.6
-172.18.2.31 passive=yes
+172.18.2.10
 
 [bahmni-emr-db]
-172.18.2.6
+172.18.2.10
 
 [bahmni-emr-db-slave]
-172.18.2.31
 
 [bahmni-erp]
-172.18.2.6
-172.18.2.31 passive=yes
+172.18.2.10
 
 [bahmni-erp-db]
-172.18.2.6
+172.18.2.10
 
 [bahmni-erp-db-slave]
-172.18.2.31
 
 [bahmni-lab]
-172.18.2.6
-172.18.2.31 passive=yes
+172.18.2.10
 
 [bahmni-lab-db]
-172.18.2.6
+172.18.2.10
 
 [bahmni-lab-db-slave]
-172.18.2.31
 
 [bahmni-reports]
-172.18.2.6
-172.18.2.31 passive=yes
+172.18.2.10
 
 [pacs-integration]
-172.18.2.6
-172.18.2.31 passive=yes
+172.18.2.10
 
 [pacs-integration-db]
-172.18.2.6
+172.18.2.10
 
 [pacs-integration-db-slave]
-172.18.2.31
 
 [dcm4chee]
-172.18.2.6
 
 [dcm4chee-db]
 
