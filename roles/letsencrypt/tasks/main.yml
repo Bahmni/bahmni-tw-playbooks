@@ -2,7 +2,7 @@
   unarchive: src=https://github.com/letsencrypt/letsencrypt/archive/v{{letsencrypt_version}}.tar.gz dest={{letsencrypt_dest_on_droplet}} copy=no
 
 - name: Rename the letsencrypt folder
-  file: src=letsencrypt-{{ letsencrypt_version }} dest=letsencrypt state=link
+  file: src=certbot-{{ letsencrypt_version }} dest=letsencrypt state=link
 
 - name: Generate certs for bahmni domain
   command: letsencrypt/letsencrypt-auto --renew certonly --agree-tos --email '{{ letsencrypt_notification_email }}' --standalone -d {{ domain_name }}
