@@ -5,7 +5,7 @@
   file: src=certbot-{{ letsencrypt_version }} dest=letsencrypt state=link
 
 - name: Generate certs for bahmni domain
-  command: letsencrypt/letsencrypt-auto --renew certonly --agree-tos --email '{{ letsencrypt_notification_email }}' --standalone -d {{ domain_name }}
+  command: letsencrypt/letsencrypt-auto --renew-by-default certonly --agree-tos --email '{{ letsencrypt_notification_email }}' --standalone -d {{ domain_name }} -d endtb-msf.mybahmni.org -d endtb-pih.mybahmni.org
 
 - name: Copy certs folder to go-agent
   sudo: no
