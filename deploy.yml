@@ -14,5 +14,4 @@
   tasks:
    - name: Run Implementation specific installer
      shell: "bahmni -i inventory install-impl"
-  tags: install-impl
-  when: install_impl_playbooks = 'yes'
+     when: install_impl_playbooks is defined and install_impl_playbooks == 'yes'
