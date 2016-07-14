@@ -9,3 +9,10 @@
     - name: Run bahmni installer
       shell: "bahmni -i inventory install"
   tags: install
+
+- hosts: go-agent
+  tasks:
+    - name: Run Implementation specific installer
+      shell: "bahmni -i inventory install-impl"
+  tags: install-impl
+  when: install_impl_playbooks = 'yes'
