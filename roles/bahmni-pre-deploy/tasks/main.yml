@@ -41,5 +41,13 @@
 - name: Copy bahmni-tw-playbooks to inventory file
   command: cp {{ base_path }}/bahmni-tw-playbooks/inventories/{{ environment_name }} /etc/bahmni-installer/inventory
 
-- name: Copy setup.xml
+- name: Copy setup.yml
   template: src=setup.yml.j2 dest=/etc/bahmni-installer/setup.yml
+
+- name: Get setup.yml from remote location if configured
+  get_url:
+   url= {{ setup_yml_url }}
+   force = yes
+   dest=/etc/bahmni-installer/setup.yml
+   mode=0644
+  when: setup_yml_url is defined
