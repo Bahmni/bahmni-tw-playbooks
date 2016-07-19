@@ -45,9 +45,8 @@
   template: src=setup.yml.j2 dest=/etc/bahmni-installer/setup.yml
 
 - name: Get setup.yml from remote location if configured
-  get_url:
-   url= {{ setup_yml_url }}
-   force = yes
+  get_url: url={{ setup_yml_url }}
+   force=yes
    dest=/etc/bahmni-installer/setup.yml
    mode=0644
   when: setup_yml_url is defined
