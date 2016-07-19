@@ -2,12 +2,17 @@
   sudo: yes
   roles:
     - { role: bahmni-pre-deploy }
+  vars_files:
+        - "group_vars/secure_vars.yml"
+
   tags: setup
 
 - hosts: go-agent
   tasks:
     - name: Run bahmni installer
       shell: "bahmni -i inventory install"
+  vars_files:
+      - "group_vars/secure_vars.yml"
   tags: install
 
 - hosts: go-agent

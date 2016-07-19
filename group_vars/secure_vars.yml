@@ -1,0 +1,27 @@
+bahmni_group: bahmnigrp
+bahmni_user: bahmnigrp
+bahmni_support_user: bahmni_support_user
+bahmni_support_group: bahmni_support_user
+bahmni_password_hash: $1$IW4OvlrH$Kui/55oif8W3VZIrnX6jL1
+
+mysql_root_user: root
+mysql_old_root_password: password
+mysql_root_password: password
+
+openmrs_db_username: openmrs-user
+openmrs_db_password: password
+
+openelis_db_username: clinlims
+openelis_db_password: password
+
+openerp_db_username: openerp
+openerp_db_password: password
+openerp_user: admin
+openerp_password: password
+
+openmrs_user_id: admin
+openmrs_user_password : test
+
+openmrs_reporting_user: reports-user
+openmrs_reporting_password: Admin123
+pacs_integration_db_username: bahmni_pacs
