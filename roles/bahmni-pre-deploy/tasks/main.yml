@@ -22,20 +22,20 @@
   get_url:
     url={{ config_url }}
     force=yes
-    dest=/etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}_{{ branch }}.zip
+    dest=/etc/bahmni-installer/deployment-artifacts/artifact.zip
     mode=0644
   when: implementation_name != 'default'
 
 - name: Unzip downloaded config file
   unarchive:
-    src=/etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}_{{ branch }}.zip
+    src=/etc/bahmni-installer/deployment-artifacts/artifact.zip
     dest=/etc/bahmni-installer/deployment-artifacts
     creates=yes
     mode=0755
   when: implementation_name != 'default'
 
 - name: Renaming config file
-  command: mv -f /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}-config-{{ branch }} /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}_config
+  shell: mv -f /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}-config-* /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}_config
   when: implementation_name != 'default'
 
 - name: Copy bahmni-tw-playbooks to inventory file
