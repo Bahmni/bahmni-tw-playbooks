@@ -1,4 +1,4 @@
- Run from agent
+# Run from agent
 - name: Deleting temporal files
   file:
     path=/etc/bahmni-installer
