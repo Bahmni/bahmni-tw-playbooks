@@ -20,3 +20,9 @@
    - name: Run Implementation specific installer
      shell: "bahmni -i inventory -impl-play {{ impl_specific_play }}  install-impl"
      when: install_impl_playbooks is defined and install_impl_playbooks == 'yes'
+
+- hosts: go-agent
+  tasks:
+    - name: Test for installation successful
+      shell: "cd /opt/bahmni-installer/bahmni-playbooks && rake serverspec:all"
+      when: run_playbook_tests is defined and run_playbook_tests == 'yes'
