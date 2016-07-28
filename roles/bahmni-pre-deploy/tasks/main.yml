@@ -38,10 +38,6 @@
   shell: mv -f /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}-config-* /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}_config
   when: implementation_name != 'default'
 
-- name: Copy bahmni-tw-playbooks to inventory file
-  command: cp {{ base_path }}/bahmni-tw-playbooks/inventories/{{ environment_name }} /etc/bahmni-installer/inventory
-
-
 - name: Copy setup.yml
   template: src=setup.yml.j2 dest=/etc/bahmni-installer/setup.yml
 
@@ -56,7 +52,7 @@
 - name: Get inventory from remote location if configured
   get_url: url={{ inv_url }}
    force=yes
-   dest=bahmni-tw-playbooks/inventories/
+   dest=/etc/bahmni-installer/inventory
    mode=0644
   when: inv_url is defined
   tags: vault
