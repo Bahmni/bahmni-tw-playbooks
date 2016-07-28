@@ -25,4 +25,3 @@
   tasks:
     - name: Test for installation successful
       shell: "cd /opt/bahmni-installer/bahmni-playbooks && rake serverspec:all"
-      when: run_playbook_tests is defined and run_playbook_tests == 'yes'
