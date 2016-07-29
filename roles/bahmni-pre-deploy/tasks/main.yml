@@ -38,6 +38,9 @@
   shell: mv -f /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}-config-* /etc/bahmni-installer/deployment-artifacts/{{ implementation_name }}_config
   when: implementation_name != 'default'
 
+- name: Copy bahmni-tw-playbooks to inventory file		
+  command: cp {{ base_path }}/bahmni-tw-playbooks/inventories/{{ environment_name }} /etc/bahmni-installer/inventory		
+
 - name: Copy setup.yml
   template: src=setup.yml.j2 dest=/etc/bahmni-installer/setup.yml
 
