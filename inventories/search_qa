@@ -11,10 +11,8 @@
 [bahmni-emr-db-slave]
 
 [bahmni-lab]
-52.66.99.15
 
 [bahmni-lab-db]
-52.66.99.15
 
 [bahmni-lab-db-slave]
 
@@ -40,6 +38,7 @@
 [dcm4chee-db-slave]
 
 [bahmni-event-log-service]
+52.66.99.15
 
 [local:children]
 nagios-server
