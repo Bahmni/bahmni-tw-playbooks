@@ -43,6 +43,9 @@
 [bahmni-offline]
 52.66.69.84
 
+[bahmni-offline]
+52.66.99.15
+
 [local:children]
 nagios-server
 bahmni-emr
