@@ -1,12 +1,12 @@
-localhost ansible_ssh_host=52.66.69.84 ansible_ssh_user=centos ansible_ssh_private_key_file=/var/go/search_aws.pem
+52.66.69.84 ansible_ssh_host=52.66.69.84 ansible_ssh_user=centos ansible_ssh_private_key_file=/var/go/search_aws.pem
 
 [nagios-server]
 
 [bahmni-emr]
-localhost
+52.66.69.84
 
 [bahmni-emr-db]
-localhost
+52.66.69.84
 
 [bahmni-emr-db-slave]
 
@@ -23,7 +23,7 @@ localhost
 [bahmni-erp-db-slave]
 
 [bahmni-reports]
-localhost
+52.66.69.84
 
 [pacs-integration]
 
@@ -38,7 +38,7 @@ localhost
 [dcm4chee-db-slave]
 
 [bahmni-event-log-service]
-localhost
+52.66.69.84
 
 [local:children]
 nagios-server
