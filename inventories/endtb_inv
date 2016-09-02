@@ -1,0 +1,7 @@
+bahmni_repo_url: http://bahmni-repo.twhosted.com/rpm/bahmni/
+implementation_name: endtb
+timezone: Asia/Kolkata
+SSLCertificateFilePath: /etc/letsencrypt/live/endtb-qa.mybahmni.org/cert.pem
+SSLCertificateKeyFilePath: /etc/letsencrypt/live/endtb-qa.mybahmni.org/privkey.pem
+SSLCertificateChainFilePath: /etc/letsencrypt/live/endtb-qa.mybahmni.org/chain.pem
+omods: ["https://s3.amazonaws.com/endtb-artifacts/1.4/bahmniendtb-1.4-SNAPSHOT.omod", "https://modules.openmrs.org/modulus/api/releases/1458/download/dataintegrity-omod-4.0.omod"]
