@@ -25,6 +25,11 @@
 [bahmni-reports]
 52.66.69.84
 
+[bahmni-reports-db]
+52.66.69.84
+
+[bahmni-reports-db-slave]
+
 [pacs-integration]
 
 [pacs-integration-db]
@@ -55,6 +60,8 @@ bahmni-erp
 bahmni-erp-db
 bahmni-erp-db-slave
 bahmni-reports
+bahmni-reports-db
+bahmni-reports-db-slave
 pacs-integration
 pacs-integration-db
 pacs-integration-db-slave

@@ -29,6 +29,11 @@
 [bahmni-reports]
 172.18.2.10
 
+[bahmni-reports-db]
+172.18.2.10
+
+[bahmni-reports-db-slave]
+
 [pacs-integration]
 172.18.2.10
 
@@ -59,6 +64,8 @@ bahmni-erp
 bahmni-erp-db
 bahmni-erp-db-slave
 bahmni-reports
+bahmni-reports-db
+bahmni-reports-db-slave
 pacs-integration
 pacs-integration-db
 pacs-integration-db-slave
