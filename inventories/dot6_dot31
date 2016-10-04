@@ -38,6 +38,12 @@
 172.18.2.6
 172.18.2.31 passive=yes
 
+[bahmni-reports-db]
+172.18.2.6
+
+[bahmni-reports-db-slave]
+172.18.2.31
+
 [pacs-integration]
 172.18.2.6
 172.18.2.31 passive=yes
@@ -72,6 +78,8 @@ bahmni-erp
 bahmni-erp-db
 bahmni-erp-db-slave
 bahmni-reports
+bahmni-reports-db
+bahmni-reports-db-slave
 pacs-integration
 pacs-integration-db
 pacs-integration-db-slave
