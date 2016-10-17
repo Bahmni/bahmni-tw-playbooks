@@ -2,4 +2,10 @@
   become: true
   roles:
     - { role: go-agent }
+    - { role: oracle-java, tags: java }
+    - { role: ruby1.9.3, tags: ruby }
+    - { role: maven, tags: mvn }
+    - { role: firefox38, tags: ff }
+    - { role: nodejs, tags: node }
+    - { role: mysql5.6, tags: mysql }
   tags: setup
