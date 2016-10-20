@@ -1,4 +1,4 @@
-localhost ansible_ssh_host=52.221.253.72 ansible_ssh_user=centos ansible_ssh_private_key_file=/var/go/upgrade_aws.pem
+localhost ansible_ssh_host=52.221.253.72 ansible_ssh_user=centos
 
 [nagios-server]
 
