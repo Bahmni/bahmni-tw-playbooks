@@ -19,8 +19,10 @@ localhost
 [bahmni-lab-db-slave]
 
 [bahmni-erp]
+localhost
 
 [bahmni-erp-db]
+localhost
 
 [bahmni-erp-db-slave]
 
@@ -33,14 +35,18 @@ localhost
 [bahmni-reports-db-slave]
 
 [pacs-integration]
+localhost
 
 [pacs-integration-db]
+localhost
 
 [pacs-integration-db-slave]
 
 [dcm4chee]
+localhost
 
 [dcm4chee-db]
+localhost
 
 [dcm4chee-db-slave]
 
