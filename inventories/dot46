@@ -18,6 +18,9 @@
 
 [bahmni-lab-db-slave]
 
+[atomfeed-console]
+172.18.2.46
+
 [bahmni-erp]
 172.18.2.46
 
