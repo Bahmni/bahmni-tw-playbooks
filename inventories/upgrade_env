@@ -51,10 +51,8 @@ localhost
 [dcm4chee-db-slave]
 
 [bahmni-event-log-service]
-localhost
 
 [bahmni-offline]
-localhost
 
 [local:children]
 nagios-server
