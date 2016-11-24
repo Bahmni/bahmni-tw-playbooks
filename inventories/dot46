@@ -11,21 +11,16 @@
 [bahmni-emr-db-slave]
 
 [bahmni-lab]
-172.18.2.46
 
 [bahmni-lab-db]
-172.18.2.46
 
 [bahmni-lab-db-slave]
 
 [atomfeed-console]
-172.18.2.46
 
 [bahmni-erp]
-172.18.2.46
 
 [bahmni-erp-db]
-172.18.2.46
 
 [bahmni-erp-db-slave]
 
@@ -38,18 +33,14 @@
 [bahmni-reports-db-slave]
 
 [pacs-integration]
-172.18.2.46
 
 [pacs-integration-db]
-172.18.2.46
 
 [pacs-integration-db-slave]
 
 [dcm4chee]
-172.18.2.46
 
 [dcm4chee-db]
-172.18.2.46
 
 [dcm4chee-db-slave]
 
