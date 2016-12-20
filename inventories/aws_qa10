@@ -1,52 +1,41 @@
 127.0.0.1 ansible_connection=local
 
-[nagios-server]
-
 [bahmni-emr]
-127.0.0.1
+localhost
 
 [bahmni-emr-db]
-127.0.0.1
+localhost
 
 [bahmni-emr-db-slave]
 
-[bahmni-lab]
-127.0.0.1
-
-[bahmni-lab-db]
-127.0.0.1
-
-[bahmni-lab-db-slave]
-
 [bahmni-erp]
-127.0.0.1
 
 [bahmni-erp-db]
-127.0.0.1
 
 [bahmni-erp-db-slave]
 
+[bahmni-lab]
+
+[bahmni-lab-db]
+
+[bahmni-lab-db-slave]
+
 [bahmni-reports]
-127.0.0.1
+localhost
 
 [bahmni-reports-db]
-127.0.0.1
 
 [bahmni-reports-db-slave]
 
 [pacs-integration]
-127.0.0.1
 
 [pacs-integration-db]
-127.0.0.1
 
 [pacs-integration-db-slave]
 
 [dcm4chee]
-127.0.0.1
 
 [dcm4chee-db]
-127.0.0.1
 
 [dcm4chee-db-slave]
 
