@@ -11,10 +11,10 @@
 [bahmni-emr-db-slave]
 
 [bahmni-lab]
-
+127.0.0.1
 
 [bahmni-lab-db]
-
+127.0.0.1
 
 [bahmni-lab-db-slave]
 
@@ -27,17 +27,14 @@
 [bahmni-erp-db-slave]
 
 [bahmni-reports]
-127.0.0.1
 
 [bahmni-reports-db]
-127.0.0.1
 
 [bahmni-reports-db-slave]
 
 [pacs-integration]
 
 [pacs-integration-db]
-
 
 [pacs-integration-db-slave]
 
