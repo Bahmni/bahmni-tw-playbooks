@@ -6,4 +6,4 @@
 gunzip emr-functional-tests/dbdump/openerp_backup.sql.gz
 mv emr-functional-tests/dbdump/openerp_backup.sql bahmni_package/bahmni-erp/resources/openerp_demo_dump.sql
 #Working Directory bahmni_package
-cd bahmni_package && ./gradlew -PbahmniRelease=#{rpm_version} :bahmni-erp:clean :bahmni-erp:buildRpm :bahmni-erp-connect:clean :bahmni-erp-connect:buildRpm
+cd bahmni_package && ./gradlew -PbahmniRelease=${rpm_version} :bahmni-erp:clean :bahmni-erp:buildRpm :bahmni-erp-connect:clean :bahmni-erp-connect:buildRpm
