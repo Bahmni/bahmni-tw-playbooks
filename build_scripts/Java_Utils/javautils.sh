@@ -1,3 +1,4 @@
 #!/bin/bash
 set -e
-mvn clean deploy -U
+#Working directory: bahmni-java-utils
+cd bahmni-java-utils && mvn clean deploy -U
