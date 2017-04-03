@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 #Fetch_Artifacts Pipeline Name: OpenERP_#{pipeline_name} Stage Name: runFunctionalTestsStage Job Name: runFunctionalTestsJob Source File: deployables/openerp-modules.zip Destination: bahmni_package/bahmni-erp/resources
 #Fetch_Artifacts Pipeline Name: OpenERP_#{pipeline_name} Stage Name: runFunctionalTestsStage Job Name: openerp-atomfeed-service Source File: openerp-atomfeed-service.war Destination: bahmni_package/bahmni-erp-connect/resources
 #Working Directory bahmni_package

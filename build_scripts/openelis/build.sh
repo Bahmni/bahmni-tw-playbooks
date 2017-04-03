@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 rm -rf deployables
 mkdir -p deployables
 #Working OpenElis
