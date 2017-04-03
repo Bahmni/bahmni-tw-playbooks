@@ -3,6 +3,6 @@ set -e
 rm -rf deployables
 mkdir -p deployables
 #Working OpenElis
-build -Dmaven.test.skip=true
+cd OpenElis && ant build -Dmaven.test.skip=true && cd ..
 cp OpenElis/openelis/dist/openelis.war deployables
 cp OpenElis/OpenElis.zip deployables
