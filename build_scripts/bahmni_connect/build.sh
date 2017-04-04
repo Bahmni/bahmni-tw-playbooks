@@ -6,7 +6,6 @@ set -e
 cordova platform remove android
 cordova platform add android
 git checkout .
-
 #Working directory: bahmni-android/android/www
 rm -rf app/
 mkdir app
