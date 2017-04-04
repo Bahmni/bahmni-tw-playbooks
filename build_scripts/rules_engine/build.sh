@@ -1,3 +1,4 @@
 #!/bin/bash
+set -e
 #Working directory: openmrs-module-rulesengine
-mvn clean deploy -U
+cd openmrs-module-rulesengine && mvn clean deploy -U
