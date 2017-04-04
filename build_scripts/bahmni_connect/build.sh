@@ -3,7 +3,7 @@ set -e
 #Working directory: bahmni-connect/ui
 cd bahmni-connect/ui && scripts/package.sh && cd ../../
 #Working directory: bahmni-android/android
-cd bahmni-android/android cordova platform remove android
+cd bahmni-android/android && cordova platform remove android
 cordova platform add android
 git checkout . && cd ../../
 #Working directory: bahmni-android/android/www
