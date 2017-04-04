@@ -8,7 +8,7 @@ cordova platform add android
 git checkout . && cd ../../
 #Working directory: bahmni-android/android/www
 cd bahmni-android/android/www && rm -rf app/
-mkdir app
+mkdir app && cd ../../../
 cp -R bahmni-connect/ui/androidDist/* bahmni-android/android/www/app/
 rm -rf bahmni_config
 mkdir bahmni_config && cd ../../../
