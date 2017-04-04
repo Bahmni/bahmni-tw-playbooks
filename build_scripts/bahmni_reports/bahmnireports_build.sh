@@ -4,4 +4,4 @@ curl -o pre_build_tasks.sh https://raw.githubusercontent.com/Bahmni/bahmni-scrip
 /bin/sh pre_build_tasks.sh
 mvn -v
 #Working directory: bahmni-reports
-mvn clean install -DskipTests -U
+cd bahmni-reports && mvn clean install -DskipTests -U
