@@ -16,5 +16,5 @@ sleep 2m
 sudo service httpd restart
 sudo service openmrs restart
 #Working directory: bahmni-gauge
-cd bahmni-gauge && mvn clean install && cd ..
+cd bahmni-gauge && mvn clean install
 cd ${specs} &&  mvn gauge:execute --env ci -Dtags=${bahmni_gauge_tags} -DinParallel=true -Dnodes=${parallel_threads}
