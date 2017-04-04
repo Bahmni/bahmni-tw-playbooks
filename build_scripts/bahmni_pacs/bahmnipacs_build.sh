@@ -1,3 +1,3 @@
 #!/bin/bash
 #Working directory: pacs_integration
-mvn clean deploy -U
+cd pacs_integration && mvn clean deploy -U
