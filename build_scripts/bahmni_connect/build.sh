@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 #Working directory: bahmni-connect/ui
-cd bahmni-connect/ui && --login scripts/package.sh && cd ../../
+cd bahmni-connect/ui && scripts/package.sh && cd ../../
 #Working directory: bahmni-android/android
 cd bahmni-android/android cordova platform remove android
 cordova platform add android
@@ -13,7 +13,7 @@ cp -R bahmni-connect/ui/androidDist/* bahmni-android/android/www/app/
 rm -rf bahmni_config
 mkdir bahmni_config && cd ../../../
 #Working directory: default-config
-cd default-config && --login scripts/package.sh
+cd default-config && scripts/package.sh
 cp default-config/target/default_config.zip bahmni-android/android/www/bahmni_config/default_config.zip && cd ..
 #Working Directory: bahmni-android/android/www/bahmni_config/
 cd bahmni-android/android/www/bahmni_config/ && unzip default_config.zip
