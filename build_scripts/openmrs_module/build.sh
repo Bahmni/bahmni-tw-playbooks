@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-mvn clean deploy -U
+cd openmrs-module-bahmni && mvn clean deploy -U
