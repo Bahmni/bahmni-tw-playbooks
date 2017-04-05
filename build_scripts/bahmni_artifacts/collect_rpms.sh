@@ -11,4 +11,4 @@
 #Fetch Artifact	Passed	Pipeline Name: Bahmni_Connect#{offline_version} Stage Name: Package Job Name: package-rpm Source Directory: rpms
 #Fetch Artifact	Passed	Pipeline Name: Implementer-interface_#{pipeline_name} Stage Name: Package Job Name: package-rpm Source Directory: rpms
 #Working directory: rpms
-ls bahmni-event-log-service-*.noarch.rpm bahmni-offline-*.noarch.rpm
+cd rpms && ls bahmni-event-log-service-*.noarch.rpm bahmni-offline-*.noarch.rpm
