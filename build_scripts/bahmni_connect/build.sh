@@ -17,7 +17,7 @@ mkdir -p bahmni-android/android/www/bahmni_config
 cd default-config && scripts/package.sh && cd ..
 cp default-config/target/default_config.zip bahmni-android/android/www/bahmni_config/default_config.zip
 #Working Directory: bahmni-android/android/www/bahmni_config/
-cd bahmni-android/android/www/bahmni_config/ && unzip default_config.zip
+cd bahmni-android/android/www/bahmni_config/ && unzip -o default_config.zip
 rm -rf apps aqs beanshell encounterModifier migrations obscalculator ordertemplates templates patientMatchingAlgorithm treatmentRegimenExtension
 rm -rf openelis default_config.zip && cd ../../../../
 #Working directory: bahmni-android/android
