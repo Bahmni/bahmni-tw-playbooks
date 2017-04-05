@@ -11,8 +11,9 @@ cd bahmni-android/android/www && rm -rf app/
 mkdir app && cd ../../../
 cp -R bahmni-connect/ui/androidDist/* bahmni-android/android/www/app/
 rm -rf bahmni_config
-mkdir bahmni_config
+mkdir -p bahmni_config
 #Working directory: default-config
+mkdir -p bahmni-android/android/www/bahmni_config
 cd default-config && scripts/package.sh && cd ..
 cp default-config/target/default_config.zip bahmni-android/android/www/bahmni_config/default_config.zip
 #Working Directory: bahmni-android/android/www/bahmni_config/
@@ -26,3 +27,5 @@ mv platforms/android/build/outputs/apk/android-release.apk bahmni-connect-androi
 #Working directory: bahmni-connect/ui/
 cd bahmni-connect/ui/ && rm -rf chromeDist
 rm -rf androidDist
+
+bahmni-android/android/www/bahmni_config/default_config.zip
