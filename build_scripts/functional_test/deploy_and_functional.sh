@@ -20,4 +20,4 @@ sudo service openmrs restart
 cd bahmni-gauge && mvn clean install
 printf '%s\n' "${PWD}"
 echo "The current working directory $PWD."
-cd ${specs} && gauge:execute --env ci -Dtags=${bahmni_gauge_tags} -DinParallel=true -Dnodes=${parallel_threads}
+cd ${specs} && mvn gauge:execute --env ci -Dtags=${bahmni_gauge_tags} -DinParallel=true -Dnodes=${parallel_threads}
