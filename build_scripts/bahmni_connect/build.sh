@@ -27,5 +27,3 @@ mv platforms/android/build/outputs/apk/android-release.apk bahmni-connect-androi
 #Working directory: bahmni-connect/ui/
 cd bahmni-connect/ui/ && rm -rf chromeDist
 rm -rf androidDist
-
-bahmni-android/android/www/bahmni_config/default_config.zip
