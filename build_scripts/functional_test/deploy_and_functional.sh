@@ -14,6 +14,9 @@ sudo service openmrs start
 echo BAHMNI_GAUGE_APP_URL = https://$HOSTNAME.mybahmni.org > /var/lib/go-agent/pipelines/$GO_PIPELINE_NAME/emr-functional-tests/spec-results/hostname.txt
 cat /var/lib/go-agent/pipelines/$GO_PIPELINE_NAME/emr-functional-tests/spec-results/hostname.txt > /var/lib/go-agent/pipelines/$GO_PIPELINE_NAME/bahmni-gauge/bahmni-gauge-default/env/ci/user.properties
 sleep 2m
+sudo sed -i 's|##SSLCertificateChainFile /etc/pki/tls/certs/server-chain.crt|SSLCertificateChainFile /etc/bahmni-certs/chained.pem|g' /opt/bahmni-web/etc/ssl.conf
+sudo sed -i 's|SSLCertificateKeyFile /etc/pki/tls/private/localhost.key|SSLCertificateKeyFile /etc/bahmni-certs/domain.key|g' /opt/bahmni-web/etc/ssl.conf
+sudo sed -i 's|SSLCertificateFile /etc/pki/tls/certs/localhost.crt|SSLCertificateFile /etc/bahmni-certs/cert.crt|g' /opt/bahmni-web/etc/ssl.conf
 sudo service httpd restart
 sudo service openmrs restart
 #Working directory: bahmni-gauge
