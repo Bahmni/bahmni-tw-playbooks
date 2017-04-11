@@ -9,7 +9,7 @@ sudo emr-functional-tests/scripts/drop_databases.sh
 sudo yum remove -y bahmni-openmrs bahmni-emr bahmni-web
 mkdir -p deployables/downloaded_rpms/rpms
 #Working directory: deployables/downloaded_rpms/rpms
-cd deployables/downloaded_rpms/rpms && sudo yum install -y bahmni-openmrs*.rpm bahmni-web*.rpm bahmni-emr*.rpm && cd ../../..
+cd deployables/downloaded_rpms/rpms && sudo yum install -y bahmni-openmrs*.rpm && sudo yum install -y bahmni-emr*.rpm && sudo yum install -y bahmni-web*.rpm  && cd ../../..
 sudo service openmrs start
 echo BAHMNI_GAUGE_APP_URL = https://$HOSTNAME.mybahmni.org > /var/lib/go-agent/pipelines/$GO_PIPELINE_NAME/emr-functional-tests/spec-results/hostname.txt
 cat /var/lib/go-agent/pipelines/$GO_PIPELINE_NAME/emr-functional-tests/spec-results/hostname.txt > /var/lib/go-agent/pipelines/$GO_PIPELINE_NAME/bahmni-gauge/bahmni-gauge-default/env/ci/user.properties
