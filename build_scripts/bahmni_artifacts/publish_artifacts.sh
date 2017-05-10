@@ -7,7 +7,9 @@ sudo createrepo --verbose --update --cachedir /tmp/rpmcache/ --workers 6 /var/ww
 	if [ $? -eq 0 ]
 	then
 	echo "Create Repo command executed successfully"
+	exit 0
 	else
 	echo "Create repo command not executed properly and exit status is : $?"
+	exit 1
 	fi
 aws s3 sync --only-show-errors --delete /var/www/rpm/bahmni/ s3://repo.mybahmni.org/rpm/bahmni/
