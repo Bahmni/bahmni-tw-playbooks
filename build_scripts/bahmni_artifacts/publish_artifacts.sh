@@ -4,4 +4,10 @@
 #Working directory: artifacts
 cd artifacts && /bin/bash yes | sudo cp -f rpms/*.rpm /var/www/rpm/bahmni/
 sudo createrepo --verbose --update --cachedir /tmp/rpmcache/ --workers 6 /var/www/rpm/bahmni/
+	if [ $? -eq 0 ]
+	then
+	echo "Create Repo command executed successfully"
+	else
+	echo "Create repo command not executed properly and exit status is : $?"
+	fi
 aws s3 sync --only-show-errors --delete /var/www/rpm/bahmni/ s3://repo.mybahmni.org/rpm/bahmni/
