@@ -19,14 +19,18 @@
 [bahmni-lab-db-slave]
 
 [bahmni-erp]
+127.0.0.1
 
 [bahmni-erp-db]
+127.0.0.1
 
 [bahmni-erp-db-slave]
 
 [bahmni-reports]
+127.0.0.1
 
 [bahmni-reports-db]
+127.0.0.1
 
 [bahmni-reports-db-slave]
 
