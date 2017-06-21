@@ -43,8 +43,10 @@
 [pacs-integration-db-slave]
 
 [dcm4chee]
+127.0.0.1
 
 [dcm4chee-db]
+127.0.0.1
 
 [dcm4chee-db-slave]
 
