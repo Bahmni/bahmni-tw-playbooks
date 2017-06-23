@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 #Fetch Artifact Passed  Pipeline Name: Bahmni_MRS_#{pipeline_name} Stage Name: BuildDistroStage Job Name: BahmniDistro Source File: openmrs-distro-bahmni-artifacts/distro-#{bahmni_version}-distro.zip Destination: deployables
-#Fetch Artifact Passed  Pipeline Name: Bahmni_MRS_#{pipeline_name} Stage Name: Package Job Name: package-rpm Source Directory: rpms Destination: deployables/downloaded_rpms/
 mkdir -p deployables/ui-modules
 rm -rf emr-functional-tests/screenshots
 mkdir -p emr-functional-tests/screenshots
