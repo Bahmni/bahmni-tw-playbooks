@@ -18,6 +18,8 @@ sudo sed -i 's|SSLCertificateKeyFile /etc/pki/tls/private/localhost.key|SSLCerti
 sudo sed -i 's|SSLCertificateFile /etc/pki/tls/certs/localhost.crt|SSLCertificateFile /etc/bahmni-certs/cert.crt|g' /opt/bahmni-web/etc/ssl.conf
 sudo service httpd restart
 sudo service openmrs restart
+#Defining the screen size for Xvfb
+Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
 #Working directory: bahmni-gauge
 cd bahmni-gauge && mvn clean install
 printf '%s\n' "${PWD}"
