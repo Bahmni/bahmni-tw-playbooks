@@ -10,11 +10,12 @@
 
 [bahmni-emr-db-slave]
 
-[bahmni-erp]
+[atomfeed-console]
 127.0.0.1
 
+[bahmni-erp]
+
 [bahmni-erp-db]
-127.0.0.1
 
 [bahmni-erp-db-slave]
 
@@ -35,28 +36,33 @@
 [bahmni-reports-db-slave]
 
 [pacs-integration]
-
+127.0.0.1
 
 [pacs-integration-db]
-
+127.0.0.1
 
 [pacs-integration-db-slave]
 
 [dcm4chee]
+127.0.0.1
 
 [dcm4chee-db]
+127.0.0.1
 
 [dcm4chee-db-slave]
 
 [bahmni-event-log-service]
+127.0.0.1
 
 [bahmni-offline]
+127.0.0.1
 
 [local:children]
 nagios-server
 bahmni-emr
 bahmni-emr-db
 bahmni-emr-db-slave
+atomfeed-console
 bahmni-lab
 bahmni-lab-db
 bahmni-lab-db-slave
