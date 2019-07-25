@@ -1,7 +1,13 @@
 #!/bin/bash
 set -e
 #Working directory: bahmni-connect/ui
-cd bahmni-connect/ui && scripts/package.sh && cd ../..
+cd bahmni-connect/ui
+if [ -z "$1" ]; then
+    scripts/package.sh
+else
+    scripts/package.sh $1
+fi
+cd ../..
 #Working directory: bahmni-android/android
 cd bahmni-android/android && cordova platform remove android
 cordova platform add android
