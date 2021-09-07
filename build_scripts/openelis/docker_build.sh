@@ -15,5 +15,6 @@ mkdir -p build/migrations
 fi
 unzip -u -d build/migrations resources/OpenElis.zip
 #Building Docker images
-docker build -t bahmni/openelis-db:latest -f docker/db.Dockerfile . --no-cache
-docker build -t bahmni/openelis:latest -f docker/Dockerfile . --no-cache
+docker build -t bahmni/openelis-db:fresh-${OPENELIS_IMAGE_VERSION} -f docker/db.Dockerfile . --no-cache
+docker build -t bahmni/openelis-db:demo-${OPENELIS_IMAGE_VERSION} -f docker/demodb.Dockerfile . --no-cache
+docker build -t bahmni/openelis:${OPENELIS_IMAGE_VERSION} -f docker/Dockerfile . --no-cache
