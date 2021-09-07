@@ -5,8 +5,8 @@ cd bahmni-package && ./gradlew -PbahmniRelease=${rpm_version} :core:clean :core:
 cp core/build/libs/core-1.0-SNAPSHOT.jar bahmni-lab/docker/bahmni-core.jar
 cd ..
 #Fetching Database Backup Data
-#gunzip emr-functional-tests/dbdump/openelis_backup.sql.gz
-#mv emr-functional-tests/dbdump/openelis_backup.sql bahmni_package/bahmni-lab/resources/openelis_demo_dump.sql
+gunzip -f -k emr-functional-tests/dbdump/openelis_backup.sql.gz
+cp emr-functional-tests/dbdump/openelis_backup.sql bahmni-package/bahmni-lab/resources/openelis_demo_dump.sql
 cd bahmni-package/bahmni-lab
 #Extracting Migrations Zip
 if [ ! -d build/migrations ]
