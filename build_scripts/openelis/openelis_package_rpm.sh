@@ -8,4 +8,4 @@ set -e
 gunzip emr-functional-tests/dbdump/openelis_backup.sql.gz
 mv emr-functional-tests/dbdump/openelis_backup.sql bahmni_package/bahmni-lab/resources/openelis_demo_dump.sql
 #working directort: bahmni_package
-cd bahmni_package && ./gradlew -PbahmniRelease=${rpm_version} :bahmni-lab:clean :bahmni-lab:buildRpm
+cd bahmni_package && ./gradlew -PbahmniRelease=${rpm_version} -PtomcatVersion=8.0.12 :bahmni-lab:clean :bahmni-lab:buildRpm
