@@ -11,7 +11,7 @@ echo "Trying to get artifacts for connect-pwa:${v_connect_pwa_artifact_id} conne
 echo "Downloading Connect android apk zip ..... "
 wget --header "Authorization: token ${v_github_token}" --output-document=bahmni-connect-apk.zip https://api.github.com/repos/Bahmni/bahmni-offline/actions/artifacts/${v_connect_android_artifact_id}/zip
 echo "Downloading Connect pwa zip ..... "
-wget --header "Authorization: token ${v_github_token}" --output-document=bahmni-connect-apps.zip https://api.github.com/repos/Bahmni/bahmni-connect/actions/artifacts/${v_connect_pwa_artifact_id}/zip
+wget --header "Authorization: token ${v_github_token}" --output-document=bahmni-connect-apps.zip https://api.github.com/repos/Bahmni/bahmni-connect/actions/artifacts/181206103/zip
 
 echo "Checking if downloaded apk zip is expandable ... "
 unzip -o bahmni-connect-apk.zip
